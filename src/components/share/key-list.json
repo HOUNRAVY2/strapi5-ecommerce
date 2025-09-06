@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_share_key_lists",
+  "info": {
+    "displayName": "key_list",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "key_list": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -471,6 +471,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    add_key: Schema.Attribute.Component<'teams-section.main-key', true>;
     categories: Schema.Attribute.Relation<
       'manyToMany',
       'api::category.category'
@@ -488,6 +489,14 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    order_list: Schema.Attribute.Integer &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
     price: Schema.Attribute.Integer & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     Quantity: Schema.Attribute.Integer & Schema.Attribute.Required;
